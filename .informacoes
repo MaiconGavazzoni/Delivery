@@ -1,0 +1,41 @@
+#####Criar o projeto #######
+        ########### add dependencies development ################
+        yarn add typescript ts-node-dev prisma @types/express @types/jsonwebtoken @types/bcrypt -D
+
+
+        ################ add dependencies project ################
+        yarn add express bcrypt jsonwebtoken @prisma/client
+
+
+        ############# gerar o tsconfig.json #############
+        yarn tsc --init
+
+        ########### copiar o tsconfig.json do prisma #########
+        https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-postgres#create-project-setup
+
+        substituir todo o conteúdo do tsconfig.json pelo indicado pelo prisma
+
+        ################# rodar a estrutura do prisma #################
+        yarn prisma init
+##############
+
+
+########### Rodar a migration #############
+yarn prisma migrate dev
+
+
+#############
+
+########### Instanciar o server ###################
+criar o arquivo server.ts para instanciar o express
+
+criar no package.json o script para rodar o server.ts
+ "scripts": {
+    "dev": "ts-node-dev src/server.ts",
+  },
+######################
+
+############ Lib de erros ###########
+yarn add express-async-errors
+
+################
