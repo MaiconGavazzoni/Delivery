@@ -39,3 +39,8 @@ criar no package.json o script para rodar o server.ts
 yarn add express-async-errors
 
 ################
+
+######### Restart TS ############
+OBS: precisa ter um arquivo .ts focado no editor
+cntrl + shift + p restart ts
+#######################
