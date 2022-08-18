@@ -24,4 +24,4 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
 
 })
 
-app.listen(3000, () => console.log('listening on port 3000 http://localhost:3000'));
+app.listen(process.env.PORT || 3000, () => console.log('listening on port 3000 http://localhost:3000'));
