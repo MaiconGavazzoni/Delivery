@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -16,6 +16,7 @@ model Deliveryman {
   password String
 
   deliveries Deliveries[]
+
   @@map("deliveryman")
 }
 
@@ -25,6 +26,7 @@ model Clients {
   password String
 
   deliveries Deliveries[]
+
   @@map("clients")
 }
 
@@ -38,8 +40,7 @@ model Deliveries {
 
   item_name  String
   created_at DateTime  @default(now())
-  end_at     DateTime? @db.DateTime(3)
-
+  end_at     DateTime? @db.Date()
 
   @@map("deliveries")
 }
