@@ -4,6 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
     "dev": "ts-node-dev --poll --exit-child --transpile-only --ignore-watch node-modules src/server.ts"
   },
   "devDependencies": {
