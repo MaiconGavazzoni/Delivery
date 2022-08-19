@@ -8,6 +8,7 @@
     "yarn": "1.22.10"
   },
   "scripts": {
+    "build": "prisma generate prisma migrate dev --name init",
     "start": "ts-node-dev --poll --exit-child --transpile-only --ignore-watch node-modules src/server.ts",
     "dev": "ts-node-dev --poll --exit-child --transpile-only --ignore-watch node-modules src/server.ts"
   },
