@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
+    "moduleResolution": "classic",
     "sourceMap": true,
     "outDir": "./dist",
     "strict": true,
