@@ -8,7 +8,7 @@
     "yarn": "1.22.10"
   },
   "scripts": {
-    "build": "tsc && prisma generate && prisma db push --preview-feature",
+    "build": "prisma generate && prisma db push --preview-feature && tsc",
     "start": "node ./dist/server.js",
     "devbuild": "tsc",
     "devstart": "ts-node-dev --poll --exit-child --transpile-only --ignore-watch node-modules src/server.ts",
