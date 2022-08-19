@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "engines": {
+    "node": "16.15.1"
+  },
   "scripts": {
     "build": "tsc",
     "start": "prisma migrate dev node dist/server.js",
