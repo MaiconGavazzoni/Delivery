@@ -29,7 +29,7 @@ class AuthenticateDeliverymanUseCase {
       throw new Error("Entregador ou senha incorreto.")
     }
 
-    const token = sign({ username }, process.env.SECRET_TOKEN_DELIVERYMAN, {
+    const token = sign({ username }, process.env.SECRET_TOKEN_DELIVERYMAN || "", {
       subject: deliveryman.id.toString(),
       expiresIn: "1d",
     });

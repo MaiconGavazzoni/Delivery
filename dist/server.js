@@ -21,5 +21,5 @@ app.use(function (err, request, response, next) {
         message: 'Internal server error'
     });
 });
-app.listen(3000, function () { return console.log('listening on port 3000 http://localhost:3000'); });
+app.listen(process.env.PORT || 3000, function () { return console.log('listening on port 3000 http://localhost:3000'); });
 //# sourceMappingURL=server.js.map

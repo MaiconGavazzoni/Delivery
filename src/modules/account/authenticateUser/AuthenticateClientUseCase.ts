@@ -29,7 +29,7 @@ class AuthenticateClientUseCase {
       throw new Error("Usuario ou senha incorreto.")
     }
 
-    const token = sign({ username }, process.env.SECRET_TOKEN_CLIENT, {
+    const token = sign({ username }, process.env.SECRET_TOKEN_CLIENT || "", {
       subject: client.id.toString(),
       expiresIn: "1d",
     });

@@ -48,7 +48,7 @@ function ensureAuthenticateDeliveryman(request, response, next) {
             }
             _a = authHeader.split(" "), token = _a[1];
             try {
-                sub = (0, jsonwebtoken_1.verify)(token, process.env.SECRET_TOKEN_DELIVERYMAN).sub;
+                sub = (0, jsonwebtoken_1.verify)(token, process.env.SECRET_TOKEN_DELIVERYMAN || "").sub;
                 request.id_deliveryman = parseInt(sub);
                 return [2 /*return*/, next()];
             }

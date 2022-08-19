@@ -65,7 +65,7 @@ var AuthenticateDeliverymanUseCase = /** @class */ (function () {
                         if (!passwordMatch) {
                             throw new Error("Entregador ou senha incorreto.");
                         }
-                        token = (0, jsonwebtoken_1.sign)({ username: username }, process.env.SECRET_TOKEN_DELIVERYMAN, {
+                        token = (0, jsonwebtoken_1.sign)({ username: username }, process.env.SECRET_TOKEN_DELIVERYMAN || "", {
                             subject: deliveryman.id.toString(),
                             expiresIn: "1d"
                         });

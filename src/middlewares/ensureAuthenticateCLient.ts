@@ -16,7 +16,7 @@ export async function ensureAuthenticateCLient(request: Request, response: Respo
   const [, token] = authHeader.split(" ");
 
   try {
-    const { sub } = verify(token, process.env.SECRET_TOKEN_CLIENT) as IPayload;
+    const { sub } = verify(token, process.env.SECRET_TOKEN_CLIENT || "") as IPayload;
     request.id_client = parseInt(sub);
 
     return next();

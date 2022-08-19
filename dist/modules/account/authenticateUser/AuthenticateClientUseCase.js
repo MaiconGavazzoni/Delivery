@@ -65,7 +65,7 @@ var AuthenticateClientUseCase = /** @class */ (function () {
                         if (!passwordMatch) {
                             throw new Error("Usuario ou senha incorreto.");
                         }
-                        token = (0, jsonwebtoken_1.sign)({ username: username }, process.env.SECRET_TOKEN_CLIENT, {
+                        token = (0, jsonwebtoken_1.sign)({ username: username }, process.env.SECRET_TOKEN_CLIENT || "", {
                             subject: client.id.toString(),
                             expiresIn: "1d"
                         });
