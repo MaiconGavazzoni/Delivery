@@ -1,22 +1,27 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "strict": true,
-    "baseUrl": ".",
+    "target": "es2016",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "module": "commonjs",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": [
-        "src/*"
+      "@database/*": [
+        "database/*"
+      ],
+      "@middlewares/*": [
+        "middlewares/*"
+      ],
+      "@modules/*": [
+        "modules/*"
       ]
     },
-    "lib": [
-      "esnext"
-    ],
-    "esModuleInterop": true
-  },
-  "include": [
-    "src/**/*.ts",
-    "tests/**/*.ts"
-  ],
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true
+  }
 }

@@ -2,6 +2,7 @@ import { prisma } from "../../../../database/prismaClient";
 
 
 
+
 export class FindAllDeliveriesDeliverymanUseCase {
 
   async execute(id_deliveryman: number) {
