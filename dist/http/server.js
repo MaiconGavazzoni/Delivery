@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const cors_1 = __importDefault(require("cors"));
-const routes_1 = require("./routes");
+const routes_1 = require("../route/routes");
 const express_1 = __importDefault(require("express"));
 require("express-async-errors");
 const app = (0, express_1.default)();
@@ -23,4 +23,5 @@ app.use((err, request, response, next) => {
         message: 'Internal server error',
     });
 });
-app.listen(process.env.PORT || 3000, () => console.log('listening on port 3000 http://localhost:3000'));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`listening on port ${port}`));

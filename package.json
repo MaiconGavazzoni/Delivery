@@ -9,9 +9,9 @@
   },
   "scripts": {
     "build": "prisma generate && prisma db push --preview-feature",
-    "devstart": "node ./dist/server.js",
+    "start": "node ./dist/http/server.js",
     "devbuild": "tsc",
-    "start": "ts-node-dev --poll --exit-child --transpile-only --ignore-watch node-modules src/server.ts",
+    "devstart": "ts-node-dev --poll --exit-child --transpile-only --ignore-watch node-modules src/http/server.ts",
     "dev": "ts-node-dev --poll --exit-child --transpile-only --ignore-watch node-modules src/server.ts"
   },
   "devDependencies": {

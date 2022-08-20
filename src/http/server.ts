@@ -1,5 +1,5 @@
 import cors from "cors";
-import { routes } from './routes';
+import { routes } from '../route/routes';
 import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 
@@ -27,6 +27,6 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
 
 })
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+app.listen(port, () => console.log(`listening on port ${port}`));
