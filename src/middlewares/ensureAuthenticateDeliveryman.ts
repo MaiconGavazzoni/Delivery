@@ -5,7 +5,11 @@ interface IPayload {
   sub: string;
 }
 
-export async function ensureAuthenticateDeliveryman(request: Request, response: Response, next: NextFunction) {
+interface RequestProp extends Request {
+  id_deliveryman: number;
+}
+
+export async function ensureAuthenticateDeliveryman(request: RequestProp, response: Response, next: NextFunction) {
   const authHeader = request.headers.authorization;
 
 
