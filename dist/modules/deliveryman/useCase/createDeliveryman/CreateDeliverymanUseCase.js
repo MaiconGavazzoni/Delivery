@@ -23,7 +23,7 @@ class CreateDeliverymanUseCase {
                 }
             });
             if (deliverymanExist) {
-                throw new Error("Já existe um entregador com esse username");
+                return new Error("Já existe um entregador com esse username");
             }
             const hashPassword = yield (0, bcrypt_1.hash)(password, 10);
             const deliveryman = yield prismaClient_1.prisma.deliveryman.create({

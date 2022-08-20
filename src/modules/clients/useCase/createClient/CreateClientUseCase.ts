@@ -21,7 +21,7 @@ class CreateClientUseCase {
     })
 
     if (clientExist) {
-      throw new Error("Já existe um cliente com esse username");
+      return new Error("Já existe um cliente com esse username");
 
     }
 

@@ -23,7 +23,7 @@ class CreateClientUseCase {
                 }
             });
             if (clientExist) {
-                throw new Error("Já existe um cliente com esse username");
+                return new Error("Já existe um cliente com esse username");
             }
             const hashPassword = yield (0, bcrypt_1.hash)(password, 10);
             const client = yield prismaClient_1.prisma.clients.create({

@@ -19,7 +19,7 @@ class CreateDeliverymanUseCase {
     })
 
     if (deliverymanExist) {
-      throw new Error("Já existe um entregador com esse username");
+      return new Error("Já existe um entregador com esse username");
 
     }
 
