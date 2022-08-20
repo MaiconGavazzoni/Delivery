@@ -9,7 +9,7 @@ import { UpdateDeliverymanController } from "../modules/deliveries/useCases/upda
 import { UpdateEndDateController } from "../modules/deliveries/useCases/updateEndDate/UpdateEndDateController";
 import { CreateDeliverymanController } from "../modules/deliveryman/useCase/createDeliveryman/CreateDeliverymanController";
 import { FindAllDeliveriesDeliverymanController } from "../modules/deliveryman/useCase/findAllDeliveries/FindAllDeliveriesDeliverymanController";
-import { ensureAuthenticateClient } from "../middlewares/ensureAuthenticateClient";
+import { ensureAuthenticateCient } from "../middlewares/ensureAuthenticateCient";
 import { ensureAuthenticateDeliveryman } from "../middlewares/ensureAuthenticateDeliveryman";
 import { CreateTesteController } from "../modules/teste/useCase/createTeste/CreateTesteController";
 
@@ -34,11 +34,11 @@ routes.post("/deliveryman/authenticate/", authenticateDeliverymanController.hand
 
 routes.post("/client/", createClientController.handle);
 routes.post("/deliveryman/", createDeliverymanController.handle);
-routes.post("/delivery/", ensureAuthenticateClient, createDeliveryController.handle);
+routes.post("/delivery/", ensureAuthenticateCient, createDeliveryController.handle);
 routes.get("/delivery/available", ensureAuthenticateDeliveryman, findAllAvailableController.handle);
 routes.put("/delivery/updateDeliveryman/:id", ensureAuthenticateDeliveryman, updateDeliverymanController.handle);
 
-routes.get("/client/deliveries", ensureAuthenticateClient, findAllDeliveriesController.handle);
+routes.get("/client/deliveries", ensureAuthenticateCient, findAllDeliveriesController.handle);
 routes.get("/deliveryman/deliveries", ensureAuthenticateDeliveryman, findAllDeliveriesDeliverymanController.handle);
 routes.put("/delivery/updateEndDate/:id", ensureAuthenticateDeliveryman, updateEndDateController.handle);
 

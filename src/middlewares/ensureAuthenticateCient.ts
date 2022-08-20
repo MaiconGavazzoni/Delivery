@@ -8,7 +8,7 @@ interface RequestProp extends Request {
   id_client: number;
 }
 
-export async function ensureAuthenticateClient(request: RequestProp, response: Response, next: NextFunction) {
+export async function ensureAuthenticateCient(request: RequestProp, response: Response, next: NextFunction) {
   const authHeader = request.headers.authorization;
 
 
